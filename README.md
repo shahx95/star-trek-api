@@ -14,9 +14,13 @@ API returns details about the species in the Star Trek eco-system. The API uses 
 ## Give It A Try:
 
 Global host name: `http://got-star-trek.herokuapp.com/`
+
 Route: `/api/{query}`
+
 **Example:**
+
 Route: `/api/vulcans`
+
 Returns:
 ```
 {
