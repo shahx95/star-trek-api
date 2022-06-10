@@ -7,7 +7,7 @@ app.use(cors())
 const PORT = 8000
 
 const MongoClient = require('mongodb').MongoClient
-const connectionString = "mongodb+srv://admin:admin@cluster0.x2p0d.mongodb.net/?retryWrites=true&w=majority"
+const connectionString = "mongodb+srv://<ID>:<password>@cluster0.x2p0d.mongodb.net/?retryWrites=true&w=majority"
 app.use(express.json())
 
 
@@ -87,12 +87,16 @@ MongoClient.connect(connectionString)
 
         app.get('/api/:alienName',(request, response)=>{
             const queryParam = request.params.alienName.toLowerCase()
+            db.documentExistsOrNotDemo.find({"UserId":101}).count() > 0
             infoCollection.find({name: queryParam}).toArray()
-            .then(results => {
-                console.log(results)
-                response.json(results[0])
-            })
-            .catch(err => console.error(err))
+                .then(results => {
+                    console.log(results)
+                    response.json(results[0])
+                })
+                .catch(err => console.error(err))
+
+
+            
         })
     })
     .catch(err => console.error(err))
