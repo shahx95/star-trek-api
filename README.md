@@ -44,6 +44,7 @@ Returns:
 
 - Clone the repository
 - Run `npm install`
+- Provide ID and password for your MangoDB database
 
 ## Usage:
 
